@@ -4,9 +4,9 @@ import java.util.*;
 
 //문제명: 문자 찾기
 
-class Main {
+class P1 {
     public static void main(String[] args) {
-        Main T = new Main();
+        P1 T = new P1();
 
         //스캐너로 받을시
         Scanner kb = new Scanner(System.in);
