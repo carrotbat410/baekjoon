@@ -40,6 +40,7 @@ class P4 {
         return answer;
     }
 
+    //직접 인덱스 이용해서 바꾸는 방법(StringBuilder 사용못하고 경우 직접 해야함.)
     public ArrayList<String> solution2(int n, String[] strArr) {
         ArrayList<String> answer = new ArrayList<>();
         for(String str : strArr) {
