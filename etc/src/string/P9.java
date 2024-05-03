@@ -5,6 +5,11 @@ package string;
 
 import java.util.Scanner;
 
+//* number string -> number로 바꾸는 방법
+// 1.Integer.parseInt() primitive type int으로 리턴
+// 2.Interger.valueOf() integer object로 리턴
+// new Interger(Integer.parseInt(s))와 동일한 셈.
+
 class P9 {
     public static void main(String[] args) {
         //#스캐너로 받을시
