@@ -22,6 +22,7 @@ class P10 {
         int len = s.length();
         int[] arr = new int[len];
         int p = len + 10;
+
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == t) {
                 p = 0;
