@@ -27,6 +27,8 @@ class P6 {
         String answer = "";
         for (int tmp : arr) {
             int res = 0;
+
+            //! StringBuilder 안쓰고 숫자 뒤집는 방법.
             while (tmp > 0) {
                 int t = tmp % 10;
                 res = res * 10 + t;
