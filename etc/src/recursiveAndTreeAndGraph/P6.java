@@ -5,7 +5,7 @@ package recursiveAndTreeAndGraph;
 class P6 {
     static int n = 0;
     static int[] ch;
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         n = 3;
         ch = new int[n + 1];
         DFS(1);

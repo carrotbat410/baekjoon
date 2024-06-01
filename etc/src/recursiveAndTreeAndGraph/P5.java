@@ -31,7 +31,7 @@ class P5 {
             DFS(root.rt);
         }
     }
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         P5 tree = new P5();
         tree.root = new Node(1);
         tree.root.lt = new Node(2);
