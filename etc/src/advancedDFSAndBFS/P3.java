@@ -6,11 +6,10 @@ import java.util.Scanner;
 //문제명: 최대점수 구하기(DFS)
 public class P3 {
     static int answer = 0;
-    static int n, m, total = 0;
+    static int n, m = 0;
     static int[] scores;
     static int[] times;
 
-    static boolean flag = false;
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
