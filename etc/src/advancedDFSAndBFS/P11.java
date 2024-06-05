@@ -27,11 +27,11 @@ public class P11 {
     }
 
     public static void BFS(int x, int y) {
-        Queue<Point> queue = new LinkedList<>();
-        queue.offer(new Point(x, y, 0));
+        Queue<Point11> queue = new LinkedList<>();
+        queue.offer(new Point11(x, y, 0));
         board[y][x] = 1;
         while(!queue.isEmpty()) {
-            Point tmp = queue.poll();
+            Point11 tmp = queue.poll();
             for(int i = 0; i < 4; i++) {
                 int nx = tmp.x + dx[i];
                 int ny = tmp.y + dy[i];
@@ -39,7 +39,7 @@ public class P11 {
                 if(nx >= 1 && ny >= 1 && nx <= 7 && ny <= 7 && board[ny][nx] == 0) {
                     if(nx == 7 && ny == 7) answer = nL;
                     board[ny][nx] = 1;
-                    queue.offer(new Point(nx, ny, nL));
+                    queue.offer(new Point11(nx, ny, nL));
                 }
             }
         }
@@ -47,9 +47,9 @@ public class P11 {
     }
 
 }
-class Point {
+class Point11 {
     public int x, y, L = 0;
-    public Point(int x, int y, int L) {
+    public Point11(int x, int y, int L) {
         this.x = x;
         this.y = y;
         this.L = L;
