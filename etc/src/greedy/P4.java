@@ -29,6 +29,7 @@ class P4 {
             arr.add(new Lecture(m, d));
             if(d > max) max = d;
         }
+        Collections.sort(arr);
 //6
 //50 2
 //20 1
@@ -43,7 +44,6 @@ class P4 {
         int answer = 0;
 //*        PriorityQueue<Integer> pQ = new PriorityQueue<>(); //기본형태. poll하면 가장 작은 값 나옴.
         PriorityQueue<Integer> pQ = new PriorityQueue<>(Collections.reverseOrder());// poll하면 가장 큰 값 나옴.
-        Collections.sort(arr);
         int j = 0;
         for(int i = max; i >= 1; i--) {
             for ( ; j < n; j++) {
