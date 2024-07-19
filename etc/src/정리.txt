@@ -1,0 +1,65 @@
+강의명: 김태원 - 자바(Java) 알고리즘 문제풀이 입문: 코딩테스트 대비
+
+각 섹션마다 중요하거나 까먹기 쉬운 내용들을 정리한 파일입니다.
+
+#Etc
+int n = kb.nextInt();
+kb.nextLine(); //! nextInt()는 버퍼에 \n남음. 그래서 버퍼 리셋시키기고 사용하기.
+String str = kb.nextLine();
+
+# 1.String
+
+
+# 2.Array
+[2-5] 소수(에라토스테네스 체)
+소수 구하는 방법 3가지
+1. 소수 검사(2 ~ n까지)
+2. 소수 검사(2 ~ Math,sqrt(n) 까지)
+3. 에라토스테네스 체 사용
+동작 방식:
+- i가 2부터 시작, ch[n+1] 배열 생성
+- ch[i] == 0이면, 소수이므로 answer에 담고
+- i인덱스의 배수 인덱스 모두 1로 바꾸기
+for (int j = i; j <= n; j = j + i) {}
+
+[2-6] 뒤집은 소수
+숫자 뒤집는 방법 2가지
+1. String Builder사용
+2. String Builder사용 X
+public int reverseInt(int num) {
+    int reversedNum = 0;
+    while (num > 0) {
+        int lastNum = num % 10;
+        reversedNum = reversedNum * 10 + lastNum;
+        num = num / 10;
+    }
+    return reversedNum;
+}
+
+
+# 3.Two Pointer, Sliding Window
+다시 풀 문제: [3-6]
+
+
+# 4.HashMap, HashSet, TreeSet
+
+[4-1] 학급 회장(해쉬)
+HashMap<Character, Integer> map = new HashMap<>();
+for(char x : str.toCharArray()) {
+    map.put(x, map.getOrDefault(x, 0)+1); // js에서는 getOrDefault직접 구현했어야했음.
+}
+
+[4-4] 모든 아나그램 찾기(해쉬, 투포인터, 슬라이딩 윈도우)
+if(tmpMap.equals(tMap)) answer++; //! equals 메서드 제공함. 구현할 필요 없음!!
+
+[4-5] K번째 큰 수
+Java TreeSet = 기본 Set + 자동 정렬 기능
+TreeSet<Integer> treeSet = new TreeSet<>(Collections.reverseOrder());
+
+
+# 5.Stack, Queue
+# 6.Sorting and Searching
+# 7.Recursive, Tree, Graph(DFS, BFS 기초)
+# 8.DFS, BFS 활용
+# 9.Greedy
+# 10.Dynamic Programming
