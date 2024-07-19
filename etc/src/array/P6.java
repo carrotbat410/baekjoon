@@ -25,18 +25,24 @@ class P6 {
 
     public static void solution(int n, int[] arr) {
         String answer = "";
-        for (int tmp : arr) {
-            int res = 0;
+        for (int num : arr) {
+            int reversedNum = reverseInt(num);
 
-            //! StringBuilder 안쓰고 숫자 뒤집는 방법.
-            while (tmp > 0) {
-                int t = tmp % 10;
-                res = res * 10 + t;
-                tmp = tmp / 10;
-            }
-            if(isPrime(res)) answer += res + " ";
+            if(isPrime(reversedNum)) answer += reversedNum + " ";
         }
         System.out.println(answer);
+    }
+
+    //! StringBuilder 안쓰고 숫자 뒤집는 방법.
+    public static int reverseInt(int num) {
+        int reversedNum = 0;
+
+        while (num > 0) {
+            int lastNum = num % 10;
+            reversedNum = reversedNum * 10 + lastNum;
+            num = num / 10;
+        }
+        return reversedNum;
     }
 
     public static boolean isPrime(int num) {

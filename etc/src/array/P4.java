@@ -15,34 +15,22 @@ class P4 {
 
         //직접 입력
         int n = 10;
-        solution2(n);
+        solution(n); // 1 1 2 3 5 8 13 21 34 55
     }
 
     public static void solution(int n) {
-        ArrayList<Integer> answer = new ArrayList<>();
-        String answerStr = "1 1 ";
-        answer.add(1);
-        answer.add(1);
-        for (int i = 2; i < n; i++) {
-            int sum = answer.get(i - 1) + answer.get(i - 2);
-            answer.add(sum);
-            answerStr += sum + " ";
+        System.out.print(1 + " " + 1);
+        int cnt = 2;
+        int tmp1 = 1;
+        int tmp2 = 1;
+        while (cnt < n) {
+            int tmpSum = tmp1 + tmp2;
+            System.out.print(" "+ tmpSum);
+            tmp1 = tmp2;
+            tmp2 = tmpSum;
+            cnt++;
         }
-        System.out.println(answerStr);
-    }
 
-    //조간: 배열 쓰지 말고 변수3개로
-    public static void solution2(int n) {
-        String answerStr = "1 1 ";
-        int a = 1;
-        int b = 1;
-        for(int i = 2; i < n; i++) {
-            int c = a + b;
-            answerStr += c + " ";
-            a = b;
-            b = c;
-        }
-        System.out.println(answerStr);
     }
 
 }
