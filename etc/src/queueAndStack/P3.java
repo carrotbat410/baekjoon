@@ -35,9 +35,9 @@ class P3 {
     public static void solution(int n, int[][] board, int m, int[] moves) {
         int answer = 0;
         Stack<Integer> stack = new Stack<>();
-        for (int moveColIdx : moves) {
+        for (int xIdx : moves) {
             for(int y = 0; y < n; y++) {
-                int target = board[y][moveColIdx - 1];
+                int target = board[y][xIdx - 1];
                 if(target != 0) {
                     if(stack.isEmpty()) stack.push(target);
                     else {
@@ -48,7 +48,7 @@ class P3 {
                             stack.push(target);
                         }
                     }
-                    board[y][moveColIdx - 1] = 0;
+                    board[y][xIdx - 1] = 0;
                     break;
                 }
             }
