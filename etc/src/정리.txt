@@ -58,6 +58,19 @@ TreeSet<Integer> treeSet = new TreeSet<>(Collections.reverseOrder());
 
 
 # 5.Stack, Queue
+[Stack]
+Stack<Character> stack = new Stack<>();
+관련 메서드
+- stack.push(),
+- stack.peek()는 값만 가져오고, stack.pop()은 스택에서 제거후 값을 가져온다.
+
+[5-5 공주 구하기]
+Queue<Integer> queue = new LinkedList<>();
+관련 메서드
+- queue.offer
+- queue.pull
+
+
 # 6.Sorting and Searching
 # 7.Recursive, Tree, Graph(DFS, BFS 기초)
 # 8.DFS, BFS 활용
