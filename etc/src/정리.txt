@@ -72,6 +72,43 @@ Queue<Integer> queue = new LinkedList<>();
 
 
 # 6.Sorting and Searching
+삽입정렬 다시 구현해보기 - LRU 캐시 문제
+
+*배열 리스트 차이
+배열은 크기 할당해줘야함.
+리스트는 그럴 필요 없음.
+
+정렬
+*1차원 배열인 경우: int[] arr = new int[n];
+Arrays.sort(arr); [1 2 3]
+Arrays.sort(arr, Collections.reverseOrder()); [3, 2, 1]
+주의할점은 Collections.reverseOrder()가 Comparator를 반환하기 때문에,
+arr 배열의 타입은 int[]가 아닌 Integer[]이어야 합니다.
+
+*1차원 리스트인 경우: List[] arr
+오름차순: Collections.sort(arr);
+내림차순: Collections.sort(arr, Comparator.reverseOrder());
+
+
+*2차원 정렬
+x기준으로 오름차순으로 정렬 (단, x가 같다면 y기준으로 오름차순으로 정렬)
+class Point implements Comparable<Point> {
+    public int x, y;
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    @Override
+    public int compareTo(Point o) {
+        if(this.x == o.x) return this.y - o.y;
+        return this.x - o.x;
+    }
+}
+
+Collections.sort(arr); //이후 정렬하기!!
+Collections.sort(arr, Comparator.reverseOrder()); // 내림차순
+
+
 # 7.Recursive, Tree, Graph(DFS, BFS 기초)
 # 8.DFS, BFS 활용
 # 9.Greedy
