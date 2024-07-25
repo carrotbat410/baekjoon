@@ -13,10 +13,9 @@ class P6 {
 
     public static void DFS(int L){
         if(L == n + 1) {
-            String str = "";
-            for(int i = 0; i <= n ; i++) if(ch[i] != 0) str += i + " ";
-            if(str.length() > 0) System.out.println(str);
-        } else {
+            for(int i = 1; i <= n; i++) if(ch[i] != 0) System.out.print(i + " ");
+            System.out.println();
+        }else {
             ch[L] = 1;
             DFS(L + 1);
             ch[L] = 0;
