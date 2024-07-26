@@ -8,7 +8,7 @@ kb.nextLine(); //! nextInt()는 버퍼에 \n남음. 그래서 버퍼 리셋시�
 String str = kb.nextLine();
 
 # 1.String
-
+Character.isAlphabetic()
 
 # 2.Array
 [2-5] 소수(에라토스테네스 체)
@@ -108,8 +108,22 @@ class Point implements Comparable<Point> {
 Collections.sort(arr); //이후 정렬하기!!
 Collections.sort(arr, Comparator.reverseOrder()); // 내림차순
 
+[6-9] 뮤직비디오
+int[] arr일때, max, min, sum 제공함.
+int lt = Arrays.stream(arr).max().getAsInt(); //OptionalInt -> 기본형 int로 바꿔야함
+int rt = Arrays.stream(arr).sum();
 
 # 7.Recursive, Tree, Graph(DFS, BFS 기초)
+[7-3] 팩토리얼
+- 팩토리얼 금방 값 커짐. n범위 커지면 BigInteger타입 사용해야함.
+- 재귀는 for문에 비해 스택프레임 도니까 메모리 낭비도 많이 일어나고 무거움. 따라서 재귀할떄 왠만하면 메모이제이션 사용하기
+
+
 # 8.DFS, BFS 활용
+어떻게 구해야할지, 변수는어떤게 필요한지 생각해보기
+중복 순열 3, 2 => (1, 1), (1, 2) (1, 3) (2 , 1) ...
+순열 3, 2 => (1, 2), (1, 3) (2, 1) (2, 3) ...
+조합 구하기 4, 2 => (1, 2), (1, 3) (1, 4) (2, 3) (2, 4) (3, 4)
+
 # 9.Greedy
 # 10.Dynamic Programming
