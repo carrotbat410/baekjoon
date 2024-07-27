@@ -89,9 +89,9 @@ Queue<Integer> queue = new LinkedList<>();
 정렬
 *1차원 배열인 경우: int[] arr = new int[n];
 Arrays.sort(arr); [1 2 3]
+
+주의사항: 내림차순하려면, arr 배열의 타입은 int[]가 아닌 Integer[]이어야 합니다.(Collections.reverseOrder()가 Comparator를 반환하기 때문에)
 Arrays.sort(arr, Collections.reverseOrder()); [3, 2, 1]
-주의할점은 Collections.reverseOrder()가 Comparator를 반환하기 때문에,
-arr 배열의 타입은 int[]가 아닌 Integer[]이어야 합니다.
 
 *1차원 리스트인 경우: List[] arr
 오름차순: Collections.sort(arr);
@@ -134,9 +134,9 @@ v(Vertex): 정점
 # 8.DFS, BFS 활용
 어떻게 구해야할지, ch 필요한지, 어떤 변수들이 필요한지 생각해보기
 [7-6] 부분집합 n =3일떄, => (1, 2, 3), (1, 2), (1, 3), (1) , (2, 3), (2), (3)
-중복 순열 3, 2 => (1, 1), (1, 2) (1, 3) (2 , 1) ...
-순열 3, 2 => (1, 2), (1, 3) (2, 1) (2, 3) ...
-조합 구하기 4, 2 => (1, 2), (1, 3) (1, 4) (2, 3) (2, 4) (3, 4)
+[8-4] 중복 순열 3, 2 => (1, 1), (1, 2) (1, 3) (2 , 1) ...
+[8-6] 순열 3, 2 => (1, 2), (1, 3) (2, 1) (2, 3) ...
+[8-9] 조합 구하기 4, 2 => (1, 2), (1, 3) (1, 4) (2, 3) (2, 4) (3, 4)
 
 # 9.Greedy
 # 10.Dynamic Programming
