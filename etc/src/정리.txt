@@ -3,9 +3,22 @@
 각 섹션마다 중요하거나 까먹기 쉬운 내용들을 정리한 파일입니다.
 
 #Etc
+1. nextInt()는 버퍼에 \n가 남는다.
 int n = kb.nextInt();
 kb.nextLine(); //! nextInt()는 버퍼에 \n남음. 그래서 버퍼 리셋시키기고 사용하기.
 String str = kb.nextLine();
+
+2. 왜 int[] arr를 찍으면 메모리 주소가, ArrayList arr를 찍으면 값이 찍히는 차이가 나는걸까?
+    1. System.out.println는 객체의 toString 메서드를 호출한다.
+    2. Object 클래스는 모든 클래스의 부모역할을 하므로 모든 객체는 이를 상속받는다.
+
+즉, int[] 배열은 Object클래스를 상속 받아서 메모리 주소가 찍힌거.
+ArrayList클래스는 다른 클래스를 상속 받고, 다른 클래스내부에 toString구현되어 있을거(ArrayList->AbstractList->AbstractCollection)
+int[] 배열을 찍고 싶으면, System.out.println(Arrays.toString(arr));
+
+--------------------------------------------------------------------
+강의명: 김태원 - 자바(Java) 알고리즘 문제풀이 입문: 코딩테스트 대비
+각 섹션마다 중요하거나 까먹기 쉬운 내용들을 정리하였습니다.
 
 # 1.String
 Character.isAlphabetic()
@@ -16,10 +29,10 @@ Character.isAlphabetic()
 1. 소수 검사(2 ~ n까지)
 2. 소수 검사(2 ~ Math,sqrt(n) 까지)
 3. 에라토스테네스 체 사용
-동작 방식:
+에라토스테네스 체 동작:
 - i가 2부터 시작, ch[n+1] 배열 생성
 - ch[i] == 0이면, 소수이므로 answer에 담고
-- i인덱스의 배수 인덱스 모두 1로 바꾸기
+- i 인덱스의 배수 인덱스 모두 1로 바꾸기
 for (int j = i; j <= n; j = j + i) {}
 
 [2-6] 뒤집은 소수
@@ -42,7 +55,6 @@ public int reverseInt(int num) {
 
 
 # 4.HashMap, HashSet, TreeSet
-
 [4-1] 학급 회장(해쉬)
 HashMap<Character, Integer> map = new HashMap<>();
 for(char x : str.toCharArray()) {
@@ -57,7 +69,7 @@ Java TreeSet = 기본 Set + 자동 정렬 기능
 TreeSet<Integer> treeSet = new TreeSet<>(Collections.reverseOrder());
 
 
-# 5.Stack, Queue
+# 5.Stack(class), Queue(interface)
 [Stack]
 Stack<Character> stack = new Stack<>();
 관련 메서드
@@ -118,9 +130,14 @@ int rt = Arrays.stream(arr).sum();
 - 팩토리얼 금방 값 커짐. n범위 커지면 BigInteger타입 사용해야함.
 - 재귀는 for문에 비해 스택프레임 도니까 메모리 낭비도 많이 일어나고 무거움. 따라서 재귀할떄 왠만하면 메모이제이션 사용하기
 
+[그래프]
+v(Vertex): 정점
+그래프 종류: 무방향 / 방향 / 가중치 방향 그래프
+그래프 그리는 방식: 인접 행렬 / 인접 리스트(정점 많으면 인접 리스트가 효율적)
 
 # 8.DFS, BFS 활용
-어떻게 구해야할지, 변수는어떤게 필요한지 생각해보기
+어떻게 구해야할지, ch 필요한지, 어떤 변수들이 필요한지 생각해보기
+[7-6] 부분집합 n =3일떄, => (1, 2, 3), (1, 2), (1, 3), (1) , (2, 3), (2), (3)
 중복 순열 3, 2 => (1, 1), (1, 2) (1, 3) (2 , 1) ...
 순열 3, 2 => (1, 2), (1, 3) (2, 1) (2, 3) ...
 조합 구하기 4, 2 => (1, 2), (1, 3) (1, 4) (2, 3) (2, 4) (3, 4)
