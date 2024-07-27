@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-//문제명: 중복순열 구하기
+//문제명: 동전교환
+//! 최소개수이므로 DFS보다는 BFS로 풀기. 아니면 DP로
 public class P5 {
     static int n, m = 0;
     static int answer = Integer.MAX_VALUE;
