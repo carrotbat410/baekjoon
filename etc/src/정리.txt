@@ -12,6 +12,13 @@ String str = kb.nextLine();
 ArrayList클래스는 다른 클래스를 상속 받고, 다른 클래스내부에 toString구현되어 있을거(ArrayList->AbstractList->AbstractCollection)
 int[] 배열을 찍고 싶으면, System.out.println(Arrays.toString(arr));
 
+3. Java에서 push, unshift 기능 구현하는법.
+ArrayList<Long> arr = new ArrayList<>();
+arr.add(1);
+arr.add(2);
+arr.add(0, 3);  //또는 arr.addFirst(3);
+결과: arr[3, 1, 2]
+
 --------------------------------------------------------------------
 강의명: 김태원 - 자바(Java) 알고리즘 문제풀이 입문: 코딩테스트 대비
 각 섹션마다 중요하거나 까먹기 쉬운 내용들을 정리하였습니다.
